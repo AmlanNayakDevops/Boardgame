@@ -38,5 +38,12 @@ pipeline {
                 echo 'its done'
             }
         }
+        }
+        } 
+     stage('ityui') {
+            steps {
+                echo 'ecr'
+            }
+        }
     }
 }
