@@ -48,9 +48,3 @@ pipeline {
         }
     }
 }
-
-                echo 'ecr'
-            }
-        }
-    }
-}
