@@ -1,15 +1,15 @@
 pipeline {
     agent any
-    
+
     tools {
         maven 'maven'
         jdk 'java 17'
     }
 
     stages {
-        stage('new file') {
+        stage('New File') {
             steps {
-                echo 'jenkins file'
+                echo 'Jenkins file'
             }
         }
         stage('Git Checkout') {
@@ -17,31 +17,38 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/AmlanNayakDevops/Boardgame.git'
             }
         }
-    stage('Compile') {
+        stage('Compile') {
             steps {
                 sh 'mvn compile'
             }
         }
-   
-    stage('test') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
         }
-    stage('package') {
+        stage('Package') {
             steps {
                 sh 'mvn package'
             }
-        } 
-     stage('itsdone') {
+        }
+        stage('Done') {
             steps {
-                echo 'its done'
+                echo 'Pipeline execution completed.'
             }
         }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
         }
-        } 
-     stage('ityui') {
-            steps {
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
+
                 echo 'ecr'
             }
         }
