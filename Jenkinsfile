@@ -22,6 +22,7 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+   
     stage('test') {
             steps {
                 sh 'mvn test'
@@ -31,6 +32,11 @@ pipeline {
             steps {
                 sh 'mvn package'
             }
-        }    
+        } 
+     stage('itsdone') {
+            steps {
+                echo 'its done'
+            }
+        }
     }
 }
