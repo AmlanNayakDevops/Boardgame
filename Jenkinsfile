@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('new file') {
+        stage('new file1') {
             steps {
                 echo 'jenkins file'
             }
